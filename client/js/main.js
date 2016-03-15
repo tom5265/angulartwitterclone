@@ -3,11 +3,11 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider
     .when('/', {
         templateUrl: 'views/welcome.html',
-        controller: 'controllers/welcomeController.js'
+        controller: 'welcomeController'
     })
     .when('/tweeter', {
         templateUrl: 'views/tweets.html',
-        controller: 'controllers/tweeterController.js'
+        controller: 'tweeterController'
     })
     .otherwise({
         redirectTo: '/'
