@@ -1,0 +1,27 @@
+<!doctype html>
+<!--used to auto bootstrap the app-->
+<html x-ng-app="myApp">
+	<head>
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="page-header">
+				<h1>MyTweets!</h1>
+			</div>
+		</div>
+		<!--ng-view is where html templetes will be loaded when page is navigated to-->
+		<div ng-view></div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+								<!--general angular library-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+				<!--angular to interact with restful services with angular-->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-resource.min.js"></script>
+							<!--angular to navigate through app-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-route.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
