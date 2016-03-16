@@ -1,9 +1,8 @@
 var controllers = angular.module('myApp.controllers', []);
 
 controllers.controller('welcomeController', ['$scope','$location', function($scope, $location) {
-    $scope.userText;
-    $scope.loadTweeter = function (userText) {
-        if (userText == null || userText == '') {
+    $scope.loadTweeter = function () {
+        if ($scope.userText == null || $scope.userText == '') {
             alert('You must enter a username!');
         }
         else {
