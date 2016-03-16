@@ -23,10 +23,6 @@ li {
     text-align: center;
 }
 
-::-webkit-input-placeholder {
-    color: black;
-} 
-
 #welcome-container {
     color: #1da1f2;
     text-align: center;

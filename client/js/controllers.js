@@ -1,8 +1,8 @@
 var controllers = angular.module('myApp.controllers', []);
 
-controllers.controller('welcomeController', ['$scope','$location', function($scope, $location) {
-    $scope.loadTweeter = function () {
-        if ($scope.userText == null || $scope.userText == '') {
+controllers.controller('welcomeController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
+    $scope.loadTweeter = function() {
+        if ($rootScope.userText == null || $rootScope.userText == '') {
             alert('You must enter a username!');
         }
         else {
@@ -11,26 +11,32 @@ controllers.controller('welcomeController', ['$scope','$location', function($sco
     }
 }]);
 
-controllers.controller('tweeterController', ['$scope', '$http', function($scope, $http) {
-    $http({
-        method: 'GET',
-        url: 'messages'
-    }).success(function(data) {
-        $scope.tweets = data;
+controllers.controller('tweeterController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
+
+    $scope.getData = function() {
+        $http({
+            method: 'GET',
+            url: 'messages'
+        }).success(function(data) {
+            $scope.tweets = data;
+        })
     }
-        )
-    // $scope.postData = function (tweet, user) {
-    //     var message = {};
-    //     message.text = tweet;
-    //     message.userName = user;
-    //     $.http({
-    //         method: 'POST',
-    //         url: 'messages',
-    //     }).success(function(data) {
-    //         $scope.tweets = data;
-            
-    //     })
-    // }
-    
+
+    $scope.postData = function() {
+
+        var tweetToPost = {
+            text: $scope.newTweet,
+            user: 'anonymous'
+        };
+        $http({
+            method: 'POST',
+            url: 'messages',
+            data: tweetToPost
+        }).success(function () {           
+            $scope.getData();
+        })
+
+    }
+    $scope.getData();
 
 }]);
