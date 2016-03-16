@@ -1,0 +1,32 @@
+input {
+    padding: 10px;
+}
+
+#form-container {
+    text-align: center;
+}
+
+#tweet_list {
+    list-style: none;
+}
+
+li {
+    padding: 10px 0 10px 0;  
+}
+
+#tweet-container {
+    background-color: #23c5e3;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+::-webkit-input-placeholder {
+    color: black;
+} 
+
+#welcome-container {
+    color: #1da1f2;
+    text-align: center;
+}
