@@ -5,8 +5,8 @@
     <form>
         <h3>Username:</h3>
         <br>
-        <input ng-model="userName" class="inp" id="user-inp" type="text" name="username" placeholder="Who Are You?">
-        <button id="btn" type="button">Submit</button>
+        <input ng-model="userText" class="inp" id="user-inp" type="text" name="username" placeholder="Who Are You?">
+        <button ng-click="loadTweeter(userText)" id="btn" type="button">Submit</button>
 
     </form>
 </div>

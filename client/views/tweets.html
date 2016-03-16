@@ -2,7 +2,7 @@
     <form>
         <h3>Post A Tweet:</h3>
         <br>
-        <input ng-value="tweet" id="inp" type="text" name="tweeter" placeholder="What's Happening?">
+        <input ng-value="tweet" ng-click="postData()" id="inp" type="text" name="tweeter" placeholder="What's Happening?">
         <button id="btn" type="button">Tweet</button>
 
     </form>
@@ -11,7 +11,7 @@
     <h3>My Tweets:</h3>
     <ul id='tweet_list'>
         <li ng-repeat='tweet in tweets'>
-            Message: {{tweet.text}}, UserName: {{tweet.userName}}
+            Message: {{tweet.text}}, User Name: {{tweet.user}}
         </li>
     </ul>
 </div>
