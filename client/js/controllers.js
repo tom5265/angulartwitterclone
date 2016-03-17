@@ -1,10 +1,10 @@
 var controllers = angular.module('myApp.controllers', []);
 
-controllers.controller('welcomeController', ['$scope', '$location','$rootScope', function($scope, $location, $rootScope) {
+controllers.controller('welcomeController', ['$scope', '$location', '$rootScope', function($scope, $location, $rootScope) {
     $scope.loadTweeter = function() {
         var userLogName = $scope.userText;
         $rootScope.userMan = userLogName;
-        
+
         if ($scope.userText == null || $scope.userText == '') {
             alert('You must enter a username!');
         }
@@ -14,7 +14,7 @@ controllers.controller('welcomeController', ['$scope', '$location','$rootScope',
     }
 }]);
 
-controllers.controller('tweeterController', ['$scope', '$http','$rootScope', function($scope, $http, $rootScope) {
+controllers.controller('tweeterController', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope) {
 
     $scope.getData = function() {
         $http({
@@ -36,10 +36,16 @@ controllers.controller('tweeterController', ['$scope', '$http','$rootScope', fun
             method: 'POST',
             url: 'messages',
             data: tweetToPost
-        }).success(function () {           
+        }).then(function() {
             $scope.getData();
+        }).then(function() {
+            $scope.clearForm();
         })
 
+    }
+
+    $scope.clearForm = function() {
+        $scope.newTweet = '';
     }
     $scope.getData();
 
