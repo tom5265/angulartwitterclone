@@ -22,6 +22,7 @@ controllers.controller('tweeterController', ['$scope', '$http','$rootScope', fun
             url: 'messages'
         }).success(function(data) {
             $scope.tweets = data;
+            data.reverse();
         })
     }
 
